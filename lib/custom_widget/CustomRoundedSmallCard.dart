@@ -4,6 +4,7 @@ import 'package:flutter_app/utiles/constants.dart';
 import 'CustomeCircle.dart';
 
 class CustomRoundedSmallCard extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) => Container(
     margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
@@ -20,7 +21,7 @@ class CustomRoundedSmallCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomeCircle(),
-          Text("CARS"),
+          Flexible(flex: 1,fit: FlexFit.tight,child: Text("CARS",textAlign: TextAlign.center,)),
         ],
       )
     ),
