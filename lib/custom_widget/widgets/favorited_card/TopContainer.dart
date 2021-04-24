@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/utiles/constants.dart';
+import 'package:flutter_app/utiles/MyColors.dart';
 
 import '../../Divider.dart';
 import '../../custom_text.dart';

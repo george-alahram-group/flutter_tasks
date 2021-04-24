@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_app/utiles/constants.dart';
+import 'package:flutter_app/utiles/MyColors.dart';
 
 import '../../CustomRoundedSmallCard.dart';
 

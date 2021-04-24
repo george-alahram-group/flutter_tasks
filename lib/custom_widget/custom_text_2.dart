@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_app/utiles/constants.dart';
+import 'package:flutter_app/utiles/MyColors.dart';
 
 class CustomText2 extends StatelessWidget {
   final String data;
