@@ -22,8 +22,7 @@ class TopContainer extends StatelessWidget {
             ),
           ),
         ),
-        child: IntrinsicHeight(
-            child: Flexible(
+        child: Flexible(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -32,13 +31,13 @@ class TopContainer extends StatelessWidget {
                 fit: FlexFit.tight,
                 child: CustomText('EDIT Ad'),
               ),
-              CustomDivider(),
+              CustomDivider(height:40),
               Flexible(
                 flex: 1,
                 fit: FlexFit.tight,
                 child: CustomText('DELETE Ad'),
               ),
-              CustomDivider(),
+              CustomDivider(height:40),
               Flexible(
                 flex: 1,
                 fit: FlexFit.tight,
@@ -46,6 +45,6 @@ class TopContainer extends StatelessWidget {
               ),
             ],
           ),
-        )),
+        ),
       );
 }

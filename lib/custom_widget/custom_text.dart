@@ -9,15 +9,13 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Flexible(
     flex: 1,
-    child: Container(
-      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-      child: Text(
-        data,
-        style: TextStyle(
-            color: MyColors().textColor,
-            fontSize: 15
-        ),
+    child: Text(
+      data,
+      style: TextStyle(
+          color: MyColors().textColor,
+          fontSize: 15,
       ),
+      textAlign: TextAlign.center,
     ),
   );
 }

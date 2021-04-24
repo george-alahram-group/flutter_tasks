@@ -5,7 +5,7 @@ import 'package:flutter_app/utiles/constants.dart';
 
 import '../../CustomRoundedSmallCard.dart';
 
-class SecondContainer extends StatelessWidget {
+class   SecondContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
         color: MyColors().cardBackground,
@@ -18,6 +18,7 @@ class SecondContainer extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Flexible(
                     flex: 3,
@@ -41,6 +42,7 @@ class SecondContainer extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
+                            margin: EdgeInsets.all(0.0),
                             clipBehavior: Clip.antiAlias,
                             borderOnForeground: true,
                             color: MyColors().primaryColor,

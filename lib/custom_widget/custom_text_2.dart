@@ -8,7 +8,7 @@ class CustomText2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+    padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
     child: Text(
       data,
       style: TextStyle(
