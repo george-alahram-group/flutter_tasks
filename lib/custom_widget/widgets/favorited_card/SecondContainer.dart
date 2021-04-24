@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_app/utiles/constants.dart';
 
 import '../../CustomRoundedSmallCard.dart';
@@ -40,6 +41,9 @@ class SecondContainer extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
+                            clipBehavior: Clip.antiAlias,
+                            borderOnForeground: true,
+                            color: MyColors().primaryColor,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -47,9 +51,22 @@ class SecondContainer extends StatelessWidget {
                               children: [
                                 Image.network(
                                   "https://picsum.photos/500/500/?random",
-                                  filterQuality: FilterQuality.high,
-                                  scale: 1,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  height: 150,
+                                  fit: BoxFit.cover,
                                 ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 5,horizontal:0.0),
+                                  child: Text(
+                                      "PRODUCT",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                )
                               ],
                             ),
                           )
@@ -83,9 +100,8 @@ class SecondContainer extends StatelessWidget {
                                       child: Text(
                                         "2500LE",
                                         style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold
-                                        ),
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
                                         textAlign: TextAlign.center,
                                       )),
                                 ],
