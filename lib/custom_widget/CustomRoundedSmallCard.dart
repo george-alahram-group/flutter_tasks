@@ -13,17 +13,11 @@ class CustomRoundedSmallCard extends StatelessWidget {
       color: MyColors().textColor,
     ),
     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-    child: Flexible(
-      flex: 1,
-      fit: FlexFit.tight,
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CustomeCircle(),
-          Flexible(flex: 1,fit: FlexFit.tight,child: Text("CARS",textAlign: TextAlign.center,)),
-        ],
-      )
+    child: Row(
+      children: [
+        CustomeCircle(),
+        Flexible(flex: 1,fit: FlexFit.tight,child: Text("CARS",textAlign: TextAlign.center,)),
+      ],
     ),
   );
 }
