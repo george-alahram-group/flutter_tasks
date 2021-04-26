@@ -3,48 +3,53 @@ import 'dart:ui' as ui;
 import 'package:flutter/rendering.dart';
 
 //Add this CustomPaint widget to the Widget Tree
-/*CustomPaint(
-//You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
-size: Size(WIDTH, (WIDTH*1).toDouble()),
+/*
+CustomPaint(
+size: Size(MediaQuery.of(context).size.width, (MediaQuery.of(context).size.width/1.5).toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
 painter: MessageCard(),
-)*/
+)
+*/
 
 class MessageCard extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
 
     Path path_0 = Path();
-    path_0.moveTo(size.width,size.height*0.9025391);
-    path_0.cubicTo(size.width,size.height*0.9035156,size.width*0.9998047,size.height*0.9039063,size.width*0.9996094,size.height*0.9046875);
-    path_0.cubicTo(size.width*0.9994141,size.height*0.9056641,size.width*0.9990234,size.height*0.9066406,size.width*0.9988281,size.height*0.9076172);
-    path_0.cubicTo(size.width*0.9968750,size.height*0.9128906,size.width*0.9941406,size.height*0.9162109,size.width*0.9900391,size.height*0.9167969);
-    path_0.cubicTo(size.width*0.9888672,size.height*0.9169922,size.width*0.9876953,size.height*0.9169922,size.width*0.9863281,size.height*0.9169922);
-    path_0.cubicTo(size.width*0.8406250,size.height*0.9169922,size.width*0.6949219,size.height*0.9169922,size.width*0.5490234,size.height*0.9169922);
-    path_0.cubicTo(size.width*0.5480469,size.height*0.9169922,size.width*0.5470703,size.height*0.9166016,size.width*0.5460938,size.height*0.9173828);
-    path_0.cubicTo(size.width*0.5453125,size.height*0.9179688,size.width*0.5449219,size.height*0.9189453,size.width*0.5443359,size.height*0.9199219);
-    path_0.cubicTo(size.width*0.5285156,size.height*0.9458984,size.width*0.5128906,size.height*0.9718750,size.width*0.4970703,size.height*0.9976563);
-    path_0.cubicTo(size.width*0.4964844,size.height*0.9984375,size.width*0.4960938,size.height*0.9994141,size.width*0.4955078,size.height*1.000195);
-    path_0.cubicTo(size.width*0.4945313,size.height*0.9996094,size.width*0.4939453,size.height*0.9984375,size.width*0.4933594,size.height*0.9974609);
-    path_0.cubicTo(size.width*0.4765625,size.height*0.9714844,size.width*0.4599609,size.height*0.9455078,size.width*0.4431641,size.height*0.9195313);
-    path_0.cubicTo(size.width*0.4419922,size.height*0.9177734,size.width*0.4410156,size.height*0.9169922,size.width*0.4392578,size.height*0.9169922);
-    path_0.cubicTo(size.width*0.3910156,size.height*0.9169922,size.width*0.3427734,size.height*0.9169922,size.width*0.2945313,size.height*0.9169922);
-    path_0.cubicTo(size.width*0.2310547,size.height*0.9169922,size.width*0.1675781,size.height*0.9169922,size.width*0.1041016,size.height*0.9167969);
-    path_0.cubicTo(size.width*0.07343750,size.height*0.9167969,size.width*0.04277344,size.height*0.9167969,size.width*0.01210938,size.height*0.9167969);
-    path_0.cubicTo(size.width*0.01074219,size.height*0.9167969,size.width*0.009179688,size.height*0.9167969,size.width*0.007812500,size.height*0.9162109);
-    path_0.cubicTo(size.width*0.002734375,size.height*0.9140625,size.width*0.0001953125,size.height*0.9083984,size.width*-0.0003906250,size.height*0.9007813);
-    path_0.cubicTo(size.width*-0.0003906250,size.height*0.8996094,size.width*-0.0003906250,size.height*0.8984375,size.width*-0.0003906250,size.height*0.8972656);
-    path_0.cubicTo(0,size.height*0.6046875,0,size.height*0.3121094,0,size.height*0.01972656);
-    path_0.cubicTo(0,size.height*0.01777344,0,size.height*0.01582031,size.width*0.0001953125,size.height*0.01386719);
-    path_0.cubicTo(size.width*0.001367187,size.height*0.005664062,size.width*0.005468750,size.height*0.0001953125,size.width*0.01093750,size.height*0.0001953125);
-    path_0.cubicTo(size.width*0.01171875,0,size.width*0.01250000,0,size.width*0.01328125,0);
-    path_0.cubicTo(size.width*0.3376953,0,size.width*0.6621094,0,size.width*0.9867187,0);
-    path_0.cubicTo(size.width*0.9880859,0,size.width*0.9896484,size.height*-0.0001953125,size.width*0.9910156,size.height*0.0001953125);
-    path_0.cubicTo(size.width*0.9951172,size.height*0.001562500,size.width*0.9978516,size.height*0.005273438,size.width*0.9994141,size.height*0.01132812);
-    path_0.cubicTo(size.width*0.9996094,size.height*0.01210938,size.width*0.9998047,size.height*0.01289062,size.width,size.height*0.01386719);
-    path_0.cubicTo(size.width,size.height*0.01679687,size.width,size.height*0.01992187,size.width,size.height*0.02285156);
-    path_0.cubicTo(size.width,size.height*0.3103516,size.width,size.height*0.5980469,size.width,size.height*0.8855469);
-    path_0.cubicTo(size.width,size.height*0.8912109,size.width,size.height*0.8968750,size.width,size.height*0.9025391);
+    path_0.moveTo(size.width*0.9910156,size.height*0.8953125);
+    path_0.cubicTo(size.width*0.9910156,size.height*0.8962891,size.width*0.9908203,size.height*0.8966797,size.width*0.9906250,size.height*0.8974609);
+    path_0.cubicTo(size.width*0.9904297,size.height*0.8984375,size.width*0.9900391,size.height*0.8994141,size.width*0.9898438,size.height*0.9003906);
+    path_0.cubicTo(size.width*0.9878906,size.height*0.9056641,size.width*0.9851563,size.height*0.9087891,size.width*0.9812500,size.height*0.9093750);
+    path_0.cubicTo(size.width*0.9800781,size.height*0.9095703,size.width*0.9789063,size.height*0.9095703,size.width*0.9775391,size.height*0.9095703);
+    path_0.cubicTo(size.width*0.8343750,size.height*0.9095703,size.width*0.6914063,size.height*0.9095703,size.width*0.5480469,size.height*0.9095703);
+    path_0.cubicTo(size.width*0.5470703,size.height*0.9095703,size.width*0.5460938,size.height*0.9091797,size.width*0.5451172,size.height*0.9099609);
+    path_0.cubicTo(size.width*0.5443359,size.height*0.9105469,size.width*0.5439453,size.height*0.9115234,size.width*0.5433594,size.height*0.9125000);
+    path_0.cubicTo(size.width*0.5277344,size.height*0.9380859,size.width*0.5125000,size.height*0.9634766,size.width*0.4968750,size.height*0.9888672);
+    path_0.cubicTo(size.width*0.4962891,size.height*0.9896484,size.width*0.4958984,size.height*0.9906250,size.width*0.4953125,size.height*0.9914063);
+    path_0.cubicTo(size.width*0.4943359,size.height*0.9908203,size.width*0.4937500,size.height*0.9896484,size.width*0.4931641,size.height*0.9886719);
+    path_0.cubicTo(size.width*0.4767578,size.height*0.9630859,size.width*0.4603516,size.height*0.9376953,size.width*0.4439453,size.height*0.9121094);
+    path_0.cubicTo(size.width*0.4427734,size.height*0.9103516,size.width*0.4417969,size.height*0.9095703,size.width*0.4400391,size.height*0.9095703);
+    path_0.cubicTo(size.width*0.3925781,size.height*0.9095703,size.width*0.3453125,size.height*0.9095703,size.width*0.2978516,size.height*0.9095703);
+    path_0.cubicTo(size.width*0.2355469,size.height*0.9095703,size.width*0.1732422,size.height*0.9095703,size.width*0.1109375,size.height*0.9093750);
+    path_0.cubicTo(size.width*0.08085938,size.height*0.9093750,size.width*0.05078125,size.height*0.9093750,size.width*0.02070313,size.height*0.9093750);
+    path_0.cubicTo(size.width*0.01933594,size.height*0.9093750,size.width*0.01777344,size.height*0.9093750,size.width*0.01640625,size.height*0.9087891);
+    path_0.cubicTo(size.width*0.01132813,size.height*0.9066406,size.width*0.008984375,size.height*0.9011719,size.width*0.008398438,size.height*0.8935547);
+    path_0.cubicTo(size.width*0.008398438,size.height*0.8923828,size.width*0.008398438,size.height*0.8912109,size.width*0.008398438,size.height*0.8900391);
+    path_0.cubicTo(size.width*0.008984375,size.height*0.6027344,size.width*0.008984375,size.height*0.3154297,size.width*0.008984375,size.height*0.02832031);
+    path_0.cubicTo(size.width*0.008984375,size.height*0.02636719,size.width*0.008984375,size.height*0.02441406,size.width*0.009179687,size.height*0.02265625);
+    path_0.cubicTo(size.width*0.01035156,size.height*0.01464844,size.width*0.01445312,size.height*0.009179687,size.width*0.01972656,size.height*0.009179687);
+    path_0.cubicTo(size.width*0.02050781,size.height*0.008984375,size.width*0.02128906,size.height*0.008984375,size.width*0.02207031,size.height*0.008984375);
+    path_0.cubicTo(size.width*0.3406250,size.height*0.008984375,size.width*0.6591797,size.height*0.008984375,size.width*0.9779297,size.height*0.008984375);
+    path_0.cubicTo(size.width*0.9792969,size.height*0.008984375,size.width*0.9808594,size.height*0.008789063,size.width*0.9822266,size.height*0.009179687);
+    path_0.cubicTo(size.width*0.9863281,size.height*0.01054687,size.width*0.9888672,size.height*0.01425781,size.width*0.9904297,size.height*0.02011719);
+    path_0.cubicTo(size.width*0.9906250,size.height*0.02089844,size.width*0.9908203,size.height*0.02167969,size.width*0.9910156,size.height*0.02265625);
+    path_0.cubicTo(size.width*0.9910156,size.height*0.02558594,size.width*0.9910156,size.height*0.02851562,size.width*0.9910156,size.height*0.03144531);
+    path_0.cubicTo(size.width*0.9910156,size.height*0.3136719,size.width*0.9910156,size.height*0.5962891,size.width*0.9910156,size.height*0.8785156);
+    path_0.cubicTo(size.width*0.9910156,size.height*0.8841797,size.width*0.9910156,size.height*0.8896484,size.width*0.9910156,size.height*0.8953125);
     path_0.close();
+
+    Paint paint_0_stroke = Paint()..style=PaintingStyle.stroke..strokeWidth=2;
+    paint_0_stroke.color=Color(0xffFFFFFF).withOpacity(1.0);
+    canvas.drawPath(path_0,paint_0_stroke);
 
     Paint paint_0_fill = Paint()..style=PaintingStyle.fill;
     paint_0_fill.color = Color(0xff333333).withOpacity(1.0);

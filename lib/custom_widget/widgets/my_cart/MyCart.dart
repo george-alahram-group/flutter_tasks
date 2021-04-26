@@ -57,7 +57,7 @@ class MyCart extends StatelessWidget {
       Padding(
         padding: EdgeInsets.all(15),
         child: CustomPaint(
-          size: Size(MediaQuery.of(context).size.width/2, (MediaQuery.of(context).size.width/1).toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+          size: Size(MediaQuery.of(context).size.width, (MediaQuery.of(context).size.width/1.5).toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
           painter: MessageCard(),
         ),
       )
