@@ -4,6 +4,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_app/custom_widget/widgets/my_cart/MyCartItem.dart';
 import 'package:flutter_app/utiles/MyColors.dart';
 
+import '../../MessageCard.dart';
 import 'MyCartDetailsSammary.dart';
 
 class MyCart extends StatelessWidget {
@@ -51,6 +52,13 @@ class MyCart extends StatelessWidget {
                   fontSize: 16),
             ),
           ],
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.all(15),
+        child: CustomPaint(
+          size: Size(MediaQuery.of(context).size.width/2, (MediaQuery.of(context).size.width/1).toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+          painter: MessageCard(),
         ),
       )
     ],
