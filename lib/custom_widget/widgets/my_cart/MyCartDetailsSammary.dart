@@ -57,18 +57,15 @@ class MyCartDetailsSummary extends StatelessWidget {
                           fontSize: 16),
                     ),
                   ),
-                  Flexible(
-                    child: Text(
-                      "700 SAR",
-                      style: TextStyle(
-                          color: MyColors().textColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
+                  Text(
+                    "700 SAR",
+                    style: TextStyle(
+                        color: MyColors().textColor,
+                        fontSize: 16),
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       );
