@@ -5,7 +5,9 @@ import 'package:flutter_app/utiles/MyColors.dart';
 
 import '../../CustomRoundedSmallCard.dart';
 
-class   SecondContainer extends StatelessWidget {
+class SecondContainer extends StatelessWidget {
+  final spacer = Container(height: 5);
+
   @override
   Widget build(BuildContext context) => Container(
         color: MyColors().cardBackground,
@@ -59,15 +61,16 @@ class   SecondContainer extends StatelessWidget {
                                   fit: BoxFit.cover,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 5,horizontal:0.0),
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 5, horizontal: 0.0),
                                   child: Text(
-                                      "PRODUCT",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                      textAlign: TextAlign.center,
+                                    "PRODUCT",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
                                     ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 )
                               ],
                             ),
@@ -109,9 +112,13 @@ class   SecondContainer extends StatelessWidget {
                                 ],
                               )),
                         ),
+                        spacer,
                         CustomRoundedSmallCard(),
+                        spacer,
                         CustomRoundedSmallCard(),
+                        spacer,
                         CustomRoundedSmallCard(),
+                        spacer,
                         CustomRoundedSmallCard(),
                       ],
                     ),

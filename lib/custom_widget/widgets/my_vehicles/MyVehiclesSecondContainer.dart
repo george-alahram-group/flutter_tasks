@@ -6,6 +6,9 @@ import 'package:flutter_app/utiles/MyColors.dart';
 import '../../CustomRoundedSmallCard.dart';
 
 class MyVehiclesSecondContainer extends StatelessWidget {
+
+  final spacer = Container(height: 9);
+
   @override
   Widget build(BuildContext context) => Container(
         color: MyColors().cardBackground,
@@ -69,15 +72,24 @@ class MyVehiclesSecondContainer extends StatelessWidget {
                       ),
                       Flexible(
                         flex: 2,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            CustomRoundedSmallCard(),
-                            CustomRoundedSmallCard(),
-                            CustomRoundedSmallCard(),
-                            CustomRoundedSmallCard(),
-                          ],
+                        child: Container(
+                          constraints: BoxConstraints(
+                            maxHeight: double.infinity,
+                            maxWidth: double.infinity,
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              CustomRoundedSmallCard(),
+                              spacer,
+                              CustomRoundedSmallCard(),
+                              spacer,
+                              CustomRoundedSmallCard(),
+                              spacer,
+                              CustomRoundedSmallCard(),
+                            ],
+                          ),
                         ),
                       )
                     ],
