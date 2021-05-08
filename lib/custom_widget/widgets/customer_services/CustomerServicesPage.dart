@@ -13,55 +13,53 @@ class CustomerServicesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Column(
-          children: [
-            PageHeader(
-              userName: userName,
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 15, left: 15, right: 15),
-              alignment: Alignment.centerLeft,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    userName,
-                    style: TextStyle(
-                        color: MyColors().textColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.location_on,
-                        color: MyColors().textColor,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Text(
-                          location,
-                          style: TextStyle(
-                            color: MyColors().textColor
-                          ),
+    return Container(
+      child: Column(
+        children: [
+          PageHeader(
+            userName: userName,
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 15, left: 15, right: 15),
+            alignment: Alignment.centerLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  userName,
+                  style: TextStyle(
+                      color: MyColors().textColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16),
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.location_on,
+                      color: MyColors().textColor,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        location,
+                        style: TextStyle(
+                          color: MyColors().textColor
                         ),
-                      )
-                    ],
-                  )
-                ],
-              ),
+                      ),
+                    )
+                  ],
+                )
+              ],
             ),
-            Flexible(
-              flex: 1,
-              child: ListView(
-                children: [for (int i = 0; i < 3; i++) ServicesPost()],
-              ),
-            )
-          ],
-        ),
+          ),
+          Flexible(
+            flex: 1,
+            child: ListView(
+              children: [for (int i = 0; i < 3; i++) ServicesPost()],
+            ),
+          )
+        ],
       ),
     );
   }
