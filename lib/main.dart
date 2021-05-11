@@ -13,6 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         home: Scaffold(
+          appBar: AppBar(
+            title: Text("Flutter App"),
+            backgroundColor: MyColors().primaryColor,
+          ),
           backgroundColor: MyColors().background,
           body: MyHomeApp(),
         ),

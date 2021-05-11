@@ -22,6 +22,7 @@ environment:
 
 dependencies:
   smooth_star_rating: 1.1.1
+  expandable: ^5.0.1
   flutter:
     sdk: flutter
 
@@ -48,6 +49,20 @@ flutter:
   assets:
     - assets/images/services.png
     - assets/images/george.jpg
+    - assets/images/splash_screen.png
+    - assets/images/choose_language.png
+    - assets/images/choose_country.png
+    - assets/images/login_screen.png
+    - assets/images/register_screen.jpg
+    - assets/images/personal_info_gest_in.png
+    - assets/images/personal_info_loged_in.png
+    - assets/images/models_list.png
+    - assets/images/chats.png
+    - assets/images/vehicles_list.png
+    - assets/images/main_categories_loedin.png
+    - assets/images/main_categories_gest_user.png
+    - assets/images/add_ads.jpg
+    - assets/images/add_ads_company.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -8,7 +8,13 @@ import 'MyCartDetailsSammary.dart';
 
 class MyCart extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => ListView(
+  Widget build(BuildContext context) => Scaffold(
+  appBar: AppBar(
+  title: Text("My Cart"),
+  backgroundColor: MyColors().primaryColor,
+  ),
+  backgroundColor: MyColors().background,
+  body: ListView(
     padding: EdgeInsets.only(top: 35),
     children: [
       for(int i = 0 ; i < 10 ; i ++) MyCartItem(),
@@ -54,5 +60,5 @@ class MyCart extends StatelessWidget {
         ),
       ),
     ],
-  );
+  ),);
 }

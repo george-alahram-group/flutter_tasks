@@ -13,53 +13,58 @@ class CustomerServicesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          PageHeader(
-            userName: userName,
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 15, left: 15, right: 15),
-            alignment: Alignment.centerLeft,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  userName,
-                  style: TextStyle(
-                      color: MyColors().textColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16),
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.location_on,
-                      color: MyColors().textColor,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Text(
-                        location,
-                        style: TextStyle(
-                          color: MyColors().textColor
-                        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Customer Services Page"),
+        backgroundColor: MyColors().primaryColor,
+      ),
+      backgroundColor: MyColors().background,
+      body: Container(
+        child: Column(
+          children: [
+            PageHeader(
+              userName: userName,
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 15, left: 15, right: 15),
+              alignment: Alignment.centerLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    userName,
+                    style: TextStyle(
+                        color: MyColors().textColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.location_on,
+                        color: MyColors().textColor,
                       ),
-                    )
-                  ],
-                )
-              ],
+                      Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Text(
+                          location,
+                          style: TextStyle(color: MyColors().textColor),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
-          ),
-          Flexible(
-            flex: 1,
-            child: ListView(
-              children: [for (int i = 0; i < 3; i++) ServicesPost()],
-            ),
-          )
-        ],
+            Flexible(
+              flex: 1,
+              child: ListView(
+                children: [for (int i = 0; i < 3; i++) ServicesPost()],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -108,7 +113,7 @@ class PageHeader extends StatelessWidget {
                           decoration:
                               BoxDecoration(color: MyColors().primaryColor),
                           padding: EdgeInsets.symmetric(
-                              horizontal: 25, vertical: 10),
+                              horizontal: 25, vertical: 8),
                           child: Text(
                             userName,
                             style: TextStyle(color: MyColors().textColor),
@@ -120,26 +125,9 @@ class PageHeader extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                for (int i = 0; i < 3; i++)
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: 5,
-                                      horizontal: 15,
-                                    ),
-                                    margin: EdgeInsets.only(right: 5),
-                                    decoration: BoxDecoration(
-                                        color: MyColors().textColor,
-                                        border: Border.all(
-                                          width: 1,
-                                          color: MyColors().primaryColor,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(50)),
-                                    child: Text(
-                                      "Home",
-                                      style: TextStyle(color: MyColors().black),
-                                    ),
-                                  )
+                                  CustomSelector(text: "Home",),
+                                  CustomSelector(text: "About",),
+                                  CustomSelector(text: "Call Us",)
                               ],
                             ),
                           ),
@@ -156,6 +144,58 @@ class PageHeader extends StatelessWidget {
     );
   }
 }
+
+class CustomSelector extends StatefulWidget {
+
+  final String text;
+
+  CustomSelector({@required this.text});
+
+  @override
+  CustomSelectorState createState() => CustomSelectorState();
+}
+
+class CustomSelectorState extends State<CustomSelector> {
+
+  var isClicked = false;
+  var clickedState = Border.all(
+    width: 1,
+    color: MyColors().primaryColor,
+  );
+  var notClickedState = Border.all(
+    width: 1,
+    color: MyColors().textColor,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          if (isClicked) isClicked = false;
+          else isClicked = true;
+        });
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          vertical: 8,
+          horizontal: 15,
+        ),
+        margin: EdgeInsets.only(right: 5),
+        decoration: BoxDecoration(
+            color: MyColors().textColor,
+            border: (isClicked) ? clickedState : notClickedState,
+            borderRadius:
+            BorderRadius.circular(50)),
+        child: Text(
+          widget.text,
+          style: TextStyle(color: MyColors().black),
+        ),
+      ),
+    );
+  }
+}
+
 
 class ProfilePicture extends StatelessWidget {
   @override
