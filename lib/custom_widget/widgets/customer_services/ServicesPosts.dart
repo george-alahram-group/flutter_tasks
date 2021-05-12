@@ -42,7 +42,7 @@ class ServicesPost extends StatelessWidget {
       child: Column(
         children: [
           PostImage(
-            list: list1,
+            list: list1.toList(),
           ),
           PostDescription(),
           PostFooter(),
@@ -60,13 +60,13 @@ class PostImage extends StatelessWidget {
   List generateFullRangeList(List list) {
     var size = list.length;
     String placeHolder = "https://picsum.photos/500/500/?random";
-    List<String> newList;
-    if (size <= 5) {
-      for (int i = 0; i < 5 - size; i++) {
-        for (int x = 0; x < size; x++) {
-          newList[x] = list[x];
-        }
-        newList[i] = placeHolder;
+    List<String> newList = [];
+    if (size < 5) {
+      for (int i = 0; i < 5; i++) {
+        if (i <= size - 1)
+          list.map((e) => newList[i] = e).toList();
+        else
+          newList[i] = placeHolder;
       }
     } else {
       newList = list;
@@ -83,8 +83,8 @@ class PostImage extends StatelessWidget {
         children: [
           (list.length > 1)
               ? MultiplePhotosHolder(
-            imagesList: generateFullRangeList(list),
-          )
+                  imagesList: generateFullRangeList(list).toList(),
+                )
               : SinglePhotosHolder(imageUrl: list[0]),
           Container(
             margin: EdgeInsets.all(10),
@@ -113,29 +113,31 @@ class MultiplePhotosHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery
-        .of(context)
-        .size;
-    return Container(
-        height: media.height / 4,
-        width: media.width - 15,
-        child: Row(
-          children: [
-            Column(
-              children: [
-                CustomImage(imagesList[0]),
-                CustomImage(imagesList[1]),
-              ],
-            ),
-            Column(
-              children: [
-                CustomImage(imagesList[2]),
-                CustomImage(imagesList[3]),
-                CustomImage(imagesList[4]),
-              ],
-            )
-          ],
-        ));
+    var media = MediaQuery.of(context).size;
+    return Flexible(
+      flex: 1,
+      fit: FlexFit.tight,
+      child: Container(
+          height: media.height / 4,
+          width: media.width - 15,
+          child: Row(
+            children: [
+              Column(
+                children: [
+                  CustomImage(imagesList[0]),
+                  CustomImage(imagesList[1]),
+                ],
+              ),
+              Column(
+                children: [
+                  CustomImage(imagesList[2]),
+                  CustomImage(imagesList[3]),
+                  CustomImage(imagesList[4]),
+                ],
+              )
+            ],
+          )),
+    );
   }
 }
 
@@ -147,9 +149,7 @@ class SinglePhotosHolder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery
-        .of(context)
-        .size;
+    var media = MediaQuery.of(context).size;
     return Container(
         height: media.height / 4,
         width: media.width - 15,
@@ -192,11 +192,27 @@ class PostDescription extends StatelessWidget {
   }
 }
 
-class PostFooter extends StatelessWidget {
-  final bool isFavorited = false;
-  final int favoritesCount = 0;
-  final int commentsCount = 0;
-  final double rate = 0.0;
+class PostFooter extends StatefulWidget {
+
+  @override
+  _PostFooterState createState() => _PostFooterState();
+}
+
+class _PostFooterState extends State<PostFooter> {
+
+  bool isFavorited;
+  int favoritesCount;
+  int commentsCount;
+  double rate;
+
+  @override
+  void initState() {
+    isFavorited = false;
+    favoritesCount = 0;
+    commentsCount = 0;
+    rate = 0.0;
+    super.initState();
+  }
 
   final TextStyle textStyle = TextStyle(color: MyColors().textColor);
 
@@ -211,11 +227,19 @@ class PostFooter extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.favorite,
-                color: (isFavorited)
-                    ? MyColors().primaryColor
-                    : MyColors().textColor,
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isFavorited = !isFavorited;
+                  });
+                },
+                child: Icon(
+                  Icons.favorite,
+                  color: (isFavorited)
+                      ? MyColors().primaryColor
+                      : MyColors().textColor,
+
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 10),
@@ -240,3 +264,4 @@ class PostFooter extends StatelessWidget {
     );
   }
 }
+
