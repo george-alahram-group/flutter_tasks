@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/custom_widget/widgets/knowledge_base/model/ScreenShootData.dart';
-import 'package:flutter_app/custom_widget/widgets/knowledge_base/widgets/Spacer.dart';
+import 'package:flutter_app/custom_widget/widgets/Spacer.dart';
 import 'package:flutter_app/utiles/MyColors.dart';
 
 class KnowledgeBasePage extends StatelessWidget {
