@@ -20,36 +20,27 @@ class KnowledgeBasePage extends StatelessWidget {
 List<ScreenShootData> screenShootData() {
   return [
     ScreenShootData(
-      title: 'figure 1',
+      title: 'splash screen',
       image: 'assets/images/splash_screen.png',
       description:
           "Splash Screen displays while the application or other item is loading",
       isExpanded: true,
     ),
     ScreenShootData(
-      title: 'figure 2',
+      title: 'choose language',
       image: 'assets/images/choose_language.png',
       description:
           "1- Choose Arabic as a Primary app's language \n 2- Choose English as a Primary app's language \n 3- Choose Your Country that you live in \n 4- Skip to move to the next Screen",
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 3',
-      image: 'assets/images/choose_language.png',
-      description: "1- Choose Arabic as a Primary app's language \n" +
-          "2- Choose English as a Primary app's language\n" +
-          "3- Choose Your Country that you live in\n" +
-          "4- Skip to move to the next Screen",
-      isExpanded: false,
-    ),
-    ScreenShootData(
-      title: 'figure 4',
+      title: 'choose country',
       image: 'assets/images/choose_country.png',
       description: "Choose your country from this list of available countries",
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 5',
+      title: 'login screen',
       image: 'assets/images/login_screen.png',
       description: "1- you can sign in using mobile number or email \n" +
           "2- password here \n" +
@@ -61,7 +52,7 @@ List<ScreenShootData> screenShootData() {
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 6',
+      title: 'register screen',
       image: 'assets/images/register_screen.jpg',
       description: "1- full name filed \n" +
           "2- email filed \n" +
@@ -76,7 +67,7 @@ List<ScreenShootData> screenShootData() {
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 7',
+      title: 'main categories for guest user',
       image: 'assets/images/main_categories_gest_user.png',
       description:
           "1- shopping cart and the number above is the cart items counter \n" +
@@ -88,26 +79,26 @@ List<ScreenShootData> screenShootData() {
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 8',
+      title: 'main categories for logged in user',
       image: 'assets/images/main_categories_loedin.png',
       description:
           "the Main categories screen will appear like this if you are logged in",
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 9',
+      title: 'vehicles screen',
       image: 'assets/images/vehicles_list.png',
       description: "1- Ad space \n" + "2- Vehicles List",
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 10',
+      title: 'cars models',
       image: 'assets/images/models_list.png',
       description: "Cars Models List",
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 11',
+      title: 'personal information for guest user',
       image: 'assets/images/personal_info_gest_in.png',
       description: "Personal Info if you aren't logged in: \n" +
           "1- profile picture and user name \n" +
@@ -123,13 +114,13 @@ List<ScreenShootData> screenShootData() {
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 12',
+      title: 'personal information for logged in user',
       image: 'assets/images/personal_info_loged_in.png',
       description: "Personal Info if you aren't logged in",
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 13',
+      title: 'add ads ( persons )',
       image: 'assets/images/add_ads.jpg',
       description: "Add Ads Screen For personal \n" +
           "1- you can choose between Personal Ad or Company Ad \n" +
@@ -140,7 +131,7 @@ List<ScreenShootData> screenShootData() {
       isExpanded: false,
     ),
     ScreenShootData(
-      title: 'figure 14',
+      title: 'add ads companies',
       image: 'assets/images/add_ads_company.jpg',
       description: "Add Ads Screen For Company \n" +
           "1- If you want to add a corporate advertisement, we will need you to add this additional company information",
@@ -208,7 +199,7 @@ class _CustomExpansionListState extends State<CustomExpansionList> {
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
       ),
       body: Container(
-        child: ScreenShoot(
+        child: ExpansionPanelBody(
           image: image,
           description: description,
         ),
@@ -218,11 +209,12 @@ class _CustomExpansionListState extends State<CustomExpansionList> {
   }
 }
 
-class ScreenShoot extends StatelessWidget {
+class ExpansionPanelBody extends StatelessWidget {
+
   final String image;
   final String description;
 
-  ScreenShoot({@required this.image, this.description});
+  ExpansionPanelBody({@required this.image, this.description});
 
   @override
   Widget build(BuildContext context) {
