@@ -42,7 +42,7 @@ class ServicesPost extends StatelessWidget {
       child: Column(
         children: [
           PostImage(
-            list: list2,
+            list: list1,
           ),
           PostDescription(),
           PostFooter(),
