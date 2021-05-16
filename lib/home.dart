@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/custom_widget/widgets/chat/ChatPage.dart';
-import 'package:flutter_app/custom_widget/widgets/customer_services/CustomerServicesPage.dart';
 import 'package:flutter_app/custom_widget/widgets/favorited_card/FavoritedCard.dart';
 import 'package:flutter_app/custom_widget/widgets/my_cart/MyCart.dart';
 import 'package:flutter_app/custom_widget/widgets/my_vehicles/MyVehicles.dart';
 import 'package:flutter_app/utiles/MyColors.dart';
 
+import 'custom_widget/widgets/AdsPage/CustomerServicesPage.dart';
+import 'custom_widget/widgets/AdsPage/widgets/add_posts_section.dart';
+import 'custom_widget/widgets/PersonalInformation/personal_information_page.dart';
 import 'custom_widget/widgets/knowledge_base/KnowledgeBasePage.dart';
 
 class MyHomeApp extends StatelessWidget {
@@ -25,6 +27,8 @@ class MyHomeApp extends StatelessWidget {
               location: "Cairo Egypt",
             )),
             CustomButton(text: "Knowledge Base Page", route: KnowledgeBasePage()),
+            CustomButton(text: "Add Post", route: AddPostsSection()),
+            CustomButton(text: "Personal Information", route: PersonalInformationPage()),
           ],
         ),
       );

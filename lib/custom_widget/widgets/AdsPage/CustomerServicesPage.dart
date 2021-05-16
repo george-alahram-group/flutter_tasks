@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app/custom_widget/widgets/customer_services/ServicesPosts.dart';
+import 'package:flutter_app/custom_widget/widgets/AdsPage/widgets/ServicesPosts.dart';
 import 'package:flutter_app/utiles/MyColors.dart';
 
 class CustomerServicesPage extends StatelessWidget {
@@ -197,7 +197,6 @@ class CustomSelectorState extends State<CustomSelector> {
   }
 }
 
-
 class ProfilePicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -206,7 +205,7 @@ class ProfilePicture extends StatelessWidget {
           shape: BoxShape.circle,
           border: Border.all(
             width: 2,
-            color: MyColors().textColor,
+            color: MyColors().textBackground,
             style: BorderStyle.solid,
           )),
       clipBehavior: Clip.antiAlias,

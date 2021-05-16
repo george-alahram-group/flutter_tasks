@@ -16,6 +16,15 @@ allprojects {
         google()
         jcenter()
     }
+
+    // this error is aborted
+    // warning: [options] source value 7 is obsolete and will be removed in a future release
+    // and this lines of code below is the solution but it need the JAVA 8 JDK
+    /*tasks.withType(JavaCompile).configureEach {
+        javaCompiler = javaToolchains.compilerFor {
+            languageVersion = JavaLanguageVersion.of(8)
+        }
+    }*/
 }
 
 rootProject.buildDir = '../build'
