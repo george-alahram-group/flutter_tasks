@@ -26,7 +26,7 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider:
-  image_picker:
+  image_picker: 0.6.5+3
   path:
 
 
